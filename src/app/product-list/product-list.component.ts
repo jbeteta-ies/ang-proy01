@@ -8,7 +8,12 @@ import { IProduct } from '../interfaces/i-product';
 })
 export class ProductListComponent {
   title = "Mi lista de productos";
-  headers = { desc: 'Producto', price: 'Precio', avail: 'Disponible' };
+
+  headers = { image: "Imagen", desc: 'Producto', price: 'Precio', avail: 'Disponible' };
+
+  showImage = true;
+
+  filterSearch = ''; // Por defecto cadena vacía.
 
   products: IProduct[] = [{
     id: 1,
@@ -25,4 +30,9 @@ export class ProductListComponent {
     imageUrl: 'assets/motherboard.jpg',
     rating: 4
   }];
+
+  toggleImage() {
+    this.showImage = ! this.showImage;
+  }
+
 }
